@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Argentina Trade Insights: Proyecto Demo Fullstack IA</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fafbfc; color: #23272f; margin: 0; padding: 0; }
+    .container { max-width: 1700px; margin: 40px auto; background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,0.08); border-radius: 10px; padding: 32px 40px; }
+    h1 { color: #1565c0; }
+    h2 { color: #2e7d32; margin-top: 32px; }
+    h3 { color: #7b1fa2; margin-top: 24px; }
+    ul, li { margin-bottom: 8px; }
+    code, pre { background: #f3f3f7; padding: 3px 7px; border-radius: 4px; font-size: 1em; color: #222; }
+    .note { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 12px 18px; margin: 18px 0; border-radius: 5px; }
+    .footer { text-align: right; color: #888; font-size: 1em; margin-top: 40px; }
+    .hierarchy-columns { display: flex; }
+    .hierarchy { flex: 2; background: #fafbfc; padding: 18px 12px; border-radius: 8px; border-right: 2px solid #cfd8dc;}
+    .columns { flex: 4; display: flex; gap: 0px; }
+    .column { flex: 1; background: #fafbfc; padding: 18px 14px; border-radius: 8px; border-left: 2px solid #cfd8dc; }
+    .element { font-weight: bold; color: #1976d2; }
+    .subelement { margin-left: 24px; color: #333; font-size: 1em; }
+    .desc { font-size: 0.96em; margin-left: 48px; margin-bottom: 10px; color: #555;}
+    .explain { font-size: 0.93em; margin-bottom: 12px; background: #f3f3f7; padding: 8px 8px 6px 8px; border-radius: 5px;}
+    .header-emoji { font-size: 1.4em; }
+    .folder-emoji { font-size: 1.2em; }
+    .file-emoji { font-size: 1.2em; margin-right: 4px;}
+    .line { height: 2px; background: #cfd8dc; margin: 0 0 10px 0;}
+    @media (max-width: 950px) {
+      .hierarchy-columns { flex-direction: column; }
+      .container { padding: 10px 2px; }
+      .columns { flex-direction: column; }
+      .hierarchy, .column { border: none; }
+      .line { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><span class="header-emoji">🌎</span> Argentina Trade Insights: Explorador Inteligente de Importaciones y Exportaciones <span class="header-emoji">🤖</span></h1>
+    <p><a href="https://www.linkedin.com/in/mcortesgranados/" target="_parent">Manuela Cortes Granados</a></p>
+    <div class="note">
+      <strong>Objetivo:</strong> Construir una aplicación web fullstack moderna que permita explorar, consultar y analizar datos abiertos de importación/exportación de Argentina, potenciando insights mediante IA generativa (ChatGPT, Gemini, Amazon Q, etc.) para responder preguntas complejas, generar reportes y visualizaciones interactivas.<br>
+      <span>Enfocado en mostrar skills de <b>arquitectura limpia, frontend moderno, backend escalable, cloud e integración IA</b>. </span>
+    </div>
+
+    <h2><span class="header-emoji">🧩</span> Arquitectura & Stack</h2>
+    <div class="hierarchy-columns">
+      <div class="hierarchy">
+        <div class="element"><span class="folder-emoji">📁</span> Frontend (React + TypeScript)</div>
+          <div class="subelement">UI moderna, responsiva, con filtros y visualizaciones (charts, dashboards)</div>
+          <div class="desc">Componente de chat para preguntas en lenguaje natural (integrado con backend e IA). Generación automática de tooltips/descripciones vía IA.</div>
+        <div class="element"><span class="folder-emoji">📁</span> Backend (Python/FastAPI)</div>
+          <div class="subelement">APIs RESTful, microservicios de ingestión/procesamiento de datos y consultas IA.</div>
+          <div class="desc">Servicio de integración con APIs de IA generativa (OpenAI, Gemini, Amazon Q, etc.)</div>
+        <div class="element"><span class="folder-emoji">📁</span> Infraestructura Cloud</div>
+          <div class="subelement">Docker, scripts de despliegue, integración continua (GitHub Actions), docs para AWS/Azure.</div>
+        <div class="element"><span class="folder-emoji">📁</span> Observabilidad</div>
+          <div class="subelement">Logs estructurados, métricas básicas, monitoreo (simulado/local o real en cloud).</div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <div class="element"><span class="file-emoji">📄</span> Bases de Datos</div>
+          <div class="subelement">PostgreSQL (principal), Redis (caching).</div>
+          <div class="element"><span class="file-emoji">📄</span> Mensajería</div>
+          <div class="subelement">Ejemplo de integración con RabbitMQ para procesamiento batch o notificaciones.</div>
+        </div>
+        <div class="column">
+          <div class="element"><span class="file-emoji">📄</span> Auth</div>
+          <div class="subelement">JWT simple, autenticación simulada para demo.</div>
+          <div class="element"><span class="file-emoji">📄</span> Documentación</div>
+          <div class="subelement">Docs técnicas en Notion/Confluence o Markdown, decisiones de arquitectura y comparativas IA/cloud.</div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+
+    <h2><span class="header-emoji">🚀</span> Funcionalidades Clave</h2>
+    <ul>
+      <li><b>Visualización interactiva</b> <span class="header-emoji">📊</span>: Exploración de importaciones/exportaciones por sector, año, provincia, etc. con filtros avanzados y gráficos.</li>
+      <li><b>Chat de IA generativa</b> <span class="header-emoji">💬🤖</span>: Permite preguntar en lenguaje natural (ej: <i>"¿Qué sectores lideraron las exportaciones en 2023?"</i>). Responde usando análisis sobre los datasets. Prompt engineering en backend.</li>
+      <li><b>Generador de reportes automáticos</b> <span class="header-emoji">📄✨</span>: Descarga de informes PDF/Excel con gráficos y explicaciones generadas por IA.</li>
+      <li><b>Documentación técnica</b> <span class="header-emoji">📝</span>: Decisiones de arquitectura, comparativas entre plataformas IA/cloud, guía de evolución/modularidad.</li>
+      <li><b>Uso de IA generativa como copiloto</b> <span class="header-emoji">👩‍💻🤝🤖</span>: Documentar cómo se usó Copilot, ChatGPT, Gemini, etc. en el desarrollo, documentación y testing.</li>
+    </ul>
+
+    <h2><span class="header-emoji">🛠️</span> Roadmap de Entrega</h2>
+    <ol>
+      <li><b>Análisis y diseño de arquitectura</b> <span class="header-emoji">🏗️</span></li>
+      <li><b>Ingesta y normalización de datasets</b> (Python, API REST, DB) <span class="header-emoji">🗃️</span></li>
+      <li><b>Backend API + microservicio IA</b> (FastAPI + integración OpenAI u otro) <span class="header-emoji">🛡️</span></li>
+      <li><b>Frontend React</b>: visualización, chat y dashboards <span class="header-emoji">🖥️</span></li>
+      <li><b>Documentación técnica y scripts de despliegue</b> <span class="header-emoji">📚</span></li>
+      <li><b>Demo funcional</b>: video o deploy online <span class="header-emoji">🎥🌐</span> (opcional en AWS/Azure)</li>
+    </ol>
+
+    <h2><span class="header-emoji">💡</span> Tips para el Demo y el CV</h2>
+    <ul>
+      <li>Resalta el uso de <span class="header-emoji">🤖</span> IA generativa como copiloto (en código, docs, testing...)</li>
+      <li>Demuestra buenas prácticas de <b>arquitectura limpia</b> y desacoplamiento <span class="header-emoji">🧹</span></li>
+      <li>Incluye ejemplos de prompts y resultados del chat IA <span class="header-emoji">💬📝</span></li>
+      <li>Documenta decisiones técnicas y compara al menos dos plataformas de IA/cloud <span class="header-emoji">⚖️</span></li>
+      <li>Muestra cómo interactuarías con otros roles (ej: cómo la solución puede ser extendida por data scientists o analistas) <span class="header-emoji">🤝</span></li>
+      <li>Incluye tests unitarios y de integración (pytest, React Testing Library) <span class="header-emoji">🧪</span></li>
+    </ul>
+
+    <h2><span class="header-emoji">💡</span>Links Datos Abiertos</h2>
+    <ul>
+      <li>https://datos.produccion.gob.ar/dataset/exportaciones-de-bienes-valores-y-cantidad-de-empresas-por-sector-de-actividad</li>
+      <li>https://datos.produccion.gob.ar/dataset/importaciones-de-bienes-valores-y-cantidad-de-empresas-por-sector-de-actividad</li>
+      <li></li>
+    </ul>
+
+    <div class="footer">
+      <span>Propuesta de proyecto demo para JD Full Stack Developer (Orientación Frontend) • Octubre 2025</span>
+    </div>
+  </div>
+</body>
+</html>
